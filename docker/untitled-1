@@ -1,0 +1,15 @@
+docker run
+
+    --name prometheus
+    --rm 
+    -d
+    -p 9090:9090
+    -v d:\Estudos\Prometheus\prometheus-grafana\prometheus.yml:/etc/prometheus/prometheus.yml
+    prom/prometheus
+
+    docker run --name prometheus --rm -dp 9090:9090 -v /Users/liliane.martins/Desktop/Estudos/Prometheus/prometheus-grafana/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+    docker container restart prometheus
+
+    //cpu /Users/liliane.martins/Desktop/Estudos/Prometheus/prometheus-grafana/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    
+    100 - (avg by (instance) (irate(windows_cpu_time_total{mode="idle", instance=~"$server"}[1m])) * 100)
